@@ -1,4 +1,3 @@
-// src/user/user.controller.ts
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../entities/employee.entity';
