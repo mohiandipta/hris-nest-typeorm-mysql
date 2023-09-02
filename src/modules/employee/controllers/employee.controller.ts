@@ -2,13 +2,16 @@ import { Body, Controller, Get, Post, Req, Res, Next } from '@nestjs/common';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../entities/employee.entity';
 import { EmployeeDTO } from '../dtos/employee.dto';
-import { handleInternalError } from 'src/shared/error/handleInternalError';
 import { REQUEST_ERROR } from 'src/shared/constants/httpCodes';
 import { requestInvalid } from 'src/helpers/http';
+import { ErrorHandlingService } from 'src/shared/error/handleInternalError.providers';
 
 @Controller('employees')
 export class EmployeeController {
-    constructor(private readonly employeeService: EmployeeService) { }
+    constructor(
+        private readonly employeeService: EmployeeService,
+        private readonly errorHandlingService: ErrorHandlingService,
+        ) { }
 
     @Get()
     async findAll(
@@ -19,7 +22,7 @@ export class EmployeeController {
             return this.employeeService.findAll()
         } catch (error) {
             console.log(error);
-            handleInternalError(error, response)
+            this.errorHandlingService.handleInternalError(error, response)
         }
     }
 
@@ -32,7 +35,7 @@ export class EmployeeController {
                 return this.employeeService.createEmployee(createEmployeeDTO)
             } catch (error) {
                 console.log(error);
-                handleInternalError(error, response)
+                this.errorHandlingService.handleInternalError(error, response)
             }
     }
 }
