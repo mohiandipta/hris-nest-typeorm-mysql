@@ -3,9 +3,9 @@ import { Request, Response } from 'express';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../entities/employee.entity';
 import { EmployeeDTO } from '../dtos/employee.dto';
-import { HTTP_CODES } from 'src/shared/constants/httpCodes';
-import { notFound, requestInvalid, success } from 'src/helpers/http';
-import { ErrorHandlingService } from 'src/shared/error/handleInternalError.providers';
+import { HTTP_CODES } from '../../../shared/constants/httpCodes';
+import { notFound, requestInvalid, success } from '../../..//helpers/http';
+import { ErrorHandlingService } from '../../../shared/error/handleInternalError.providers';
 
 @Controller('employees')
 export class EmployeeController {
