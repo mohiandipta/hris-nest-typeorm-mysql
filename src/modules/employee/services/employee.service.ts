@@ -5,10 +5,6 @@ import { EmployeeDTO } from '../dtos/employee.dto';
 
 @Injectable()
 export class EmployeeService {
-    constructor(
-        @Inject('EMPLOYEE_REPOSITORY')
-        private employeeRepository: Repository<Employee>,
-    ) { }
 
     async findAll(): Promise<Employee[]> {
         return [{email: 'email', id:1, name:"employee"}]
