@@ -1,11 +1,8 @@
 import { Body, Controller, Get, Post, Req, Res, Next } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { EmployeeService } from '../services/employee.service';
-import { Employee } from '../entities/employee.entity';
-import { EmployeeDTO } from '../dtos/employee.dto';
 import { HTTP_CODES } from '../../../shared/constants/httpCodes';
 import { notFound, requestInvalid, success } from '../../..//helpers/http';
-import { ErrorHandlingService } from '../../../shared/error/handleInternalError.providers';
 
 @Controller('employees')
 export class EmployeeController {
@@ -29,16 +26,4 @@ export class EmployeeController {
             return response.status(HTTP_CODES.REQUEST_ERROR).json(requestInvalid(error));
         }
     }
-
-    // @Post()
-    // async createEmployee(
-    //     @Req() request: Request,
-    //     @Res() response: Response, 
-    //     @Body() createEmployeeDTO: EmployeeDTO) {
-    //         try {
-    //             return this.employeeService.createEmployee(createEmployeeDTO)
-    //         } catch (error) {
-    //             return response.status(httpCodes.REQUEST_ERROR).json(requestInvalid(error));
-    //         }
-    // }
 }
