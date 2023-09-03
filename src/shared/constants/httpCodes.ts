@@ -1,9 +1,9 @@
-export const SUCCESS: Number = 200;
-export const NO_DATA_FOUND: Number = 200;
-export const NOT_FOUND: Number = 404;
-export const INACTIVE: Number = 403;
+export const SUCCESS: number = 200;
+export const NO_DATA_FOUND: number = 200;
+export const NOT_FOUND: number = 404;
+export const INACTIVE: number = 403;
 export const NOT_ALLOWED: Number = 405;
-export const ERROR: Number = 500;
-export const REQUEST_ERROR: Number = 400;
-export const CONFLICT: Number = 409;
-export const UNAUTHORIZED: Number = 401;
+export const ERROR: number = 500;
+export const REQUEST_ERROR: number = 400;
+export const CONFLICT: number = 409;
+export const UNAUTHORIZED: number = 401;

@@ -1,7 +1,7 @@
 import * as statusCodes from '../shared/constants/httpCodes';
 
 export interface Response<T> {
-    statusCode: number;
+    statusCode: Number;
     message: string;
     data?: T;
     error?: string;
