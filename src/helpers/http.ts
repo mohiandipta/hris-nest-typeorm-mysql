@@ -11,14 +11,14 @@ export interface Response<T> {
 export const success = (data: any, count = 0): Response<any> => {
     if (count > 0) {
         return {
-            statusCode: statusCodes.httpCodes.SUCCESS,
+            statusCode: statusCodes.HTTP_CODES.SUCCESS,
             message: 'Success',
             data: data,
             count: count,
         };
     } else {
         return {
-            statusCode: statusCodes.httpCodes.SUCCESS,
+            statusCode: statusCodes.HTTP_CODES.SUCCESS,
             message: 'Success',
             data: data,
         };
@@ -27,7 +27,7 @@ export const success = (data: any, count = 0): Response<any> => {
 
 export const dataNotFound = (message = 'Data not found'): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.NO_DATA_FOUND,
+        statusCode: statusCodes.HTTP_CODES.NO_DATA_FOUND,
         message: message,
         data: [],
     };
@@ -35,7 +35,7 @@ export const dataNotFound = (message = 'Data not found'): Response<any> => {
 
 export const notFound = (message = 'Not found'): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.NOT_FOUND,
+        statusCode: statusCodes.HTTP_CODES.NOT_FOUND,
         message: message,
         data: [],
     };
@@ -45,7 +45,7 @@ export const serverError = (
     error = 'An Error Occurred. Please contact an admin.'
 ): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.ERROR,
+        statusCode: statusCodes.HTTP_CODES.ERROR,
         message: error,
         data: [],
         error: 'Internal Server error',
@@ -54,7 +54,7 @@ export const serverError = (
 
 export const requestInvalid = (message: string): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.REQUEST_ERROR,
+        statusCode: statusCodes.HTTP_CODES.REQUEST_ERROR,
         message: message,
         data: [],
         error: 'Bad Request',
@@ -65,7 +65,7 @@ export const notAllowed = (
     message = 'You are not allowed to do this operation'
 ): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.NOT_ALLOWED,
+        statusCode: statusCodes.HTTP_CODES.NOT_ALLOWED,
         message: message,
         data: [],
         error: 'Not allowed',
@@ -76,7 +76,7 @@ export const notAuthorized = (
     message = 'You are not authorized to do this operation'
 ): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.UNAUTHORIZED,
+        statusCode: statusCodes.HTTP_CODES.UNAUTHORIZED,
         message: message,
         data: [],
         error: 'Not Authorized',
@@ -85,7 +85,7 @@ export const notAuthorized = (
 
 export const conflict = (message: string): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.CONFLICT,
+        statusCode: statusCodes.HTTP_CODES.CONFLICT,
         message: message,
         data: [],
         error: 'Duplicate Value',
@@ -94,7 +94,7 @@ export const conflict = (message: string): Response<any> => {
 
 export const inactive = (message: string): Response<any> => {
     return {
-        statusCode: statusCodes.httpCodes.INACTIVE,
+        statusCode: statusCodes.HTTP_CODES.INACTIVE,
         message: message,
         data: [],
         error: 'Inactive',

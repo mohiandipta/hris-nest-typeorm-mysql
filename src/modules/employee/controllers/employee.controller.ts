@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { EmployeeService } from '../services/employee.service';
 import { Employee } from '../entities/employee.entity';
 import { EmployeeDTO } from '../dtos/employee.dto';
-import { httpCodes } from 'src/shared/constants/httpCodes';
+import { HTTP_CODES } from 'src/shared/constants/httpCodes';
 import { notFound, requestInvalid, success } from 'src/helpers/http';
 import { ErrorHandlingService } from 'src/shared/error/handleInternalError.providers';
 
@@ -24,9 +24,9 @@ export class EmployeeController {
                     .status(404)
                     .json(notFound('Currently there is no employee'));
             }
-            return response.status(httpCodes.SUCCESS).json(success(data));
+            return response.status(HTTP_CODES.SUCCESS).json(success(data));
         } catch (error) {
-            return response.status(httpCodes.REQUEST_ERROR).json(requestInvalid(error));
+            return response.status(HTTP_CODES.REQUEST_ERROR).json(requestInvalid(error));
         }
     }
 
