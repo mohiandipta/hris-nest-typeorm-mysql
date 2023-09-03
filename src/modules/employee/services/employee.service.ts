@@ -11,11 +11,11 @@ export class EmployeeService {
     ) { }
 
     async findAll(): Promise<Employee[]> {
-        return this.employeeRepository.find();
+        return [{email: 'email', id:1, name:"employee"}]
     }
 
-    async createEmployee(employeeDTO: EmployeeDTO){
-        const newEmployee = this.employeeRepository.create(employeeDTO);
-        return await this.employeeRepository.save(employeeDTO)
-    }
+    // async createEmployee(employeeDTO: EmployeeDTO){
+    //     const newEmployee = this.employeeRepository.create(employeeDTO);
+    //     return await this.employeeRepository.save(employeeDTO)
+    // }
 }
